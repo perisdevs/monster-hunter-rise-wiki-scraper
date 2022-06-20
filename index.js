@@ -1,8 +1,18 @@
 import { ElementDamage, Material, RampageSkill, Sharpness, SkillSlot, Weapon } from './lib.mjs';
 import * as fs from 'fs';
+import * as path from 'path';
 import * as https from 'https';
 import * as jsdom from 'jsdom';
 const { JSDOM } = jsdom;
+
+
+/*if (!fs.existsSync('/charge_blades')) {
+  fs.mkdirSync('/charge_blades');
+}*/
+        
+if (!fs.existsSync('charge_blades')) {
+  fs.mkdirSync('charge_blades');
+}        
 
 const options = {
   hostname: 'monsterhunterrise.wiki.fextralife.com',
@@ -176,10 +186,12 @@ const req = https.request(options, res => {
           materials: materials,
         });
 
-        console.log(weapon);
+        //console.log(weapon);
 
         let weaponString = JSON.stringify(weapon);
         let fileName = weapon.name.replace(/\s/g, '-');
+
+        
         
         fs.writeFileSync(`charge_blades/${fileName}.json`, weaponString);
         
