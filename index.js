@@ -1,4 +1,4 @@
-import { ElementDamage, Material, RampageSkill, Sharpness, SkillSlot, Weapon } from './lib.mjs';
+import { ChargeBlade, ElementDamage, Material, RampageSkill, Sharpness, SkillSlot, Weapon } from './lib.mjs';
 import * as fs from 'fs';
 import * as path from 'path';
 import * as https from 'https';
@@ -106,9 +106,9 @@ const req = https.request(options, res => {
           
         }
 
-        let affinity = parseInt(weaponInfo[3].textContent); //affinity is stored as plaintext
-        
-        //IMPACT PHIAL IS weaponInfo[4], ADD TO CHARGE BLADE CLASS
+        let affinity = parseInt(weaponInfo[3].textContent); //affinity is stored as plaintext        
+
+        let phial = weaponInfo[4].textContent; //phial type is stored as plaintext
 
         let defenseBonus = parseInt(weaponInfo[5].textContent); //defense bonus is stored as plaintext
         
@@ -153,7 +153,7 @@ const req = https.request(options, res => {
             }
             name = name.trim();                              
 
-            if (splitData[splitData.length-1].includes('Points')) {
+            if (splitData[splitData.length-1].includes('Points')) { //some materials are a category rather than item
               materials.push(new Material({
                 name: name,
                 quantity: splitData[splitData.length-1],
@@ -168,7 +168,7 @@ const req = https.request(options, res => {
           }
         });        
 
-        let weapon = new Weapon({
+        let weapon = new ChargeBlade({
           name: name,
           sharpness: sharpness,
           skillSlots: skillSlots,
@@ -179,10 +179,11 @@ const req = https.request(options, res => {
           rarity: rarity,
           rampageSkills: rampageSkills,
           materials: materials,
+          phial: phial,
         });
 
         let weaponString = JSON.stringify(weapon);
-        let fileName = weapon.name.replace(/\s/g, '-');
+        let fileName = weapon.name.replace(/\s/g, '-');      
 
         fs.writeFileSync(`charge_blades/${fileName}.json`, weaponString);
         

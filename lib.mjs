@@ -50,3 +50,10 @@ export class Weapon {
         this.materials = props.materials;        
     }
 }
+
+export class ChargeBlade extends Weapon {
+    constructor(props) {
+        super(props);
+        this.phial = props.phial;
+    }
+}
