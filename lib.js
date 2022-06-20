@@ -57,3 +57,9 @@ export class ChargeBlade extends Weapon {
         this.phial = props.phial;
     }
 }
+
+export class GreateSword extends Weapon {
+    constructor(props) {
+        super(props);
+    }
+}

@@ -1,4 +1,4 @@
-import { ChargeBlade, ElementDamage, Material, RampageSkill, Sharpness, SkillSlot, Weapon } from './lib.mjs';
+import { ChargeBlade, ElementDamage, Material, RampageSkill, Sharpness, SkillSlot, Weapon } from './lib.js';
 import * as fs from 'fs';
 import * as path from 'path';
 import * as https from 'https';
