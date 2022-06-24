@@ -58,7 +58,13 @@ export class ChargeBlade extends Weapon {
     }
 }
 
-export class GreateSword extends Weapon {
+export class GreatSword extends Weapon {
+    constructor(props) {
+        super(props);
+    }
+}
+
+export class LongSword extends Weapon {
     constructor(props) {
         super(props);
     }

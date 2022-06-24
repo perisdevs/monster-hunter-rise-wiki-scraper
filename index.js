@@ -1,22 +1,29 @@
-import { ElementDamage, GreatSword, Material, RampageSkill, Sharpness, SkillSlot } from './lib.js';
+import { ElementDamage, LongSword, Material, RampageSkill, Sharpness, SkillSlot } from './lib.js';
+import { WeaponTypeInfo } from './consts.js';
 import * as fs from 'fs';
 import * as https from 'https';
 import * as jsdom from 'jsdom';
 const { JSDOM } = jsdom;
+
+const urls = {
+    LongSword: '/Long+Swords',
+};
         
-if (!fs.existsSync('great_swords')) {
-  fs.mkdirSync('great_swords');
-}        
+if (!fs.existsSync('long_swords')) {
+  fs.mkdirSync('long_swords');
+}    
 
 const options = {
   hostname: 'monsterhunterrise.wiki.fextralife.com',
-  path: '/Great+Swords',
+  path: '/Long+Swords',
   method: 'GET',
 };
 
+const longSwordIndeces = WeaponTypeInfo.LongSword;
+
 let responseText = '';
 
-const req = https.request(options, res => {
+const longSwordReq = https.request(options, res => {
   console.log(`statusCode: ${res.statusCode}`);
 
   res.on('data', d => {
@@ -30,14 +37,23 @@ const req = https.request(options, res => {
       let rows = Array.from(table.children); //one weapon per table row
 
       rows.forEach((row) => {
-
         let weaponInfo = Array.from(row.children); //weapon info is represented as td elements in the row
-        
-        let untestedName = weaponInfo[0].querySelector('a').innerHTML; //weapon name is <a> element, sometimes contains slot info
+                
+        let damageContainer = weaponInfo[longSwordIndeces.Damage];
+        let elementDamageContainer = weaponInfo[longSwordIndeces.ElementDamage];
+        let affinityContainer = weaponInfo[longSwordIndeces.Affinity];
+        let defenseBonusContainer = weaponInfo[longSwordIndeces.DefenseBonus];
+        let rarityContainer = weaponInfo[longSwordIndeces.Rarity];
+        let rampageSkillsContainer = weaponInfo[longSwordIndeces.RampageSkills];
+        let craftingContainer = weaponInfo[longSwordIndeces.Crafting];
+
+        let nameSkillSharpnessContainer = weaponInfo[longSwordIndeces.NameSkillSharpness];
+
+        let nameContiner  = nameSkillSharpnessContainer.querySelector('a');
         let name = null;
         let skillSlots = null;
 
-        if (untestedName.includes('<')) { //test if element includes just name or name and slots            
+        if (nameContiner.innerHTML.includes('<')) { //test if element includes just name or name and slots            
             name = weaponInfo[0].querySelector('a').textContent;
 
             let uncheckedSkillSlots = Array.from(weaponInfo[0].querySelector('a').children);            
@@ -167,7 +183,7 @@ const req = https.request(options, res => {
           }
         });        
 
-        let weapon = new GreatSword({
+        let weapon = new LongSword({
           name: name,
           sharpness: sharpness,
           skillSlots: skillSlots,
@@ -183,15 +199,15 @@ const req = https.request(options, res => {
         let weaponString = JSON.stringify(weapon);
         let fileName = weapon.name.replace(/\s/g, '-');      
 
-        fs.writeFileSync(`great_swords/${fileName}.json`, weaponString);
+        //fs.writeFileSync(`great_swords/${fileName}.json`, weaponString);
         console.log(weapon);
       });
   });
   
 });
 
-req.on('error', error => {
+longSwordReq.on('error', error => {
   console.error(error);
 });
-req.end();
+longSwordReq.end();
 
