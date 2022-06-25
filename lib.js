@@ -69,3 +69,9 @@ export class LongSword extends Weapon {
         super(props);
     }
 }
+
+export class SwordAndShield extends Weapon {
+    constructor(props) {
+        super(props);
+    }
+}

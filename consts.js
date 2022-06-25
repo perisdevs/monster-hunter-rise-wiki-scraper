@@ -1,3 +1,5 @@
+import { chargeBladeResponse, greatSwordResponse, longSwordResponse, swordAndShieldResponse } from './responses.js';
+
 export const WeaponTypeInfo = {
     LongSword: {
         NameSkillSharpness: 0,
@@ -19,7 +21,7 @@ export const WeaponTypeInfo = {
         DefenseBonus: 5,
         Rarity: 6,
         RampageSkills: 7,
-        Crafting: 7,
+        Crafting: 8,
     },
 
     GreatSword: {
@@ -172,3 +174,38 @@ export const WeaponTypeInfo = {
         Crafting: 11,
     }
 };
+
+export const Requests = [
+    {
+      options: {
+        hostname: 'monsterhunterrise.wiki.fextralife.com',
+        path: '/Long+Swords',
+        method: 'GET',
+      },
+      response: longSwordResponse,
+    },
+    {
+      options: {
+        hostname: 'monsterhunterrise.wiki.fextralife.com',
+        path: '/Great+Swords',
+        method: 'GET',
+      },
+      response: greatSwordResponse,
+    },
+    {
+      options: {
+        hostname: 'monsterhunterrise.wiki.fextralife.com',
+        path: '/Charge+Blades',
+        method: 'GET',
+      },
+      response: chargeBladeResponse,
+    },
+    {
+        options: {
+          hostname: 'monsterhunterrise.wiki.fextralife.com',
+          path: '/Sword+&+Shields',
+          method: 'GET',
+        },
+        response: swordAndShieldResponse,
+      },
+  ];
