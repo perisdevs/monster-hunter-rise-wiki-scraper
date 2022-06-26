@@ -1,4 +1,4 @@
-import { SkillSlot, Sharpness, ElementDamage, RampageSkill, Material } from "./lib.js";
+import { SkillSlot, Sharpness, ElementDamage, RampageSkill, Material, Melody, ChargeShot } from "./lib.js";
 
 export function scrapeContainerForName(container) {
     let name = container.textContent;
@@ -94,22 +94,24 @@ export function scrapeContainerForRarity(container) {
 }
 
 export function scrapeContainerForRampageSkills(container) {
-    let rampageSkillData = Array.from(container.querySelector('ul').children); //rampage skills are stored as list items
     let rampageSkills = [];
-    rampageSkillData.forEach((skill) => {
+    
+    if(container.querySelector('ul')) {
+        let rampageSkillData = Array.from(container.querySelector('ul').children); //rampage skills are stored as list items
+        rampageSkillData.forEach((skill) => {
 
-    if (skill.querySelector('a')) { //rampage weapons don't have links to skills
-        let name = skill.querySelector('a').textContent;
-        rampageSkills.push(new RampageSkill({
-        name: name,
-        }));            
-    } else {
-        rampageSkills.push(new RampageSkill({
-        name: 'Any',
-        })); 
+            if (skill.querySelector('a')) { //rampage weapons don't have links to skills
+                let name = skill.querySelector('a').textContent;
+                rampageSkills.push(new RampageSkill({
+                name: name,
+                }));            
+            } else {
+                rampageSkills.push(new RampageSkill({
+                name: 'Any',
+                })); 
+            }
+            });
     }
-    });
-
     return rampageSkills;
 }
 
@@ -165,4 +167,107 @@ export function scrapeContainerForMaterials(container) {
 export function scrapeContainerForPhialType(container) {
     let phialType = container.textContent;
     return phialType;
+}
+
+export function scrapeContainerForMelodies(container) {    
+    let melodyNames = container.innerHTML.trim().split(/<img[^>]*>/);
+    melodyNames.splice(0, 1);
+    
+    melodyNames.forEach((melody, i, arr) => {//text of melody names
+        melody = melody.replace(/&nbsp;/, '');//are between img elements
+        melody = melody.replace(/<br>/, '');
+        arr[i] = melody;        
+    });
+
+    let colors = Array.from(container.querySelectorAll('img'));
+    //colors are stored as first word in img title
+    colors.forEach((melody, i, arr) => {
+        let color = melody.getAttribute('title').split('_')[0];
+        arr[i] = color;        
+    });
+
+    let melody0 = new Melody({
+        color: colors[0],
+        name: melodyNames[0],
+    });
+
+    let melody1 = new Melody({
+        color: colors[1],
+        name: melodyNames[1],
+    });
+
+    let melody2 = new Melody({
+        color: colors[2],
+        name: melodyNames[2],
+    });
+
+    let melodies = [melody0, melody1, melody2];
+    
+    return melodies;
+}
+
+export function scrapeContainerForShellType(container) {
+    let shellType = container.textContent;
+    return shellType;
+}
+
+export function scrapeContainerForShellLevel(container) {
+    let shellLevel = parseInt(container.textContent.split(/\s/)[1]);
+    return shellLevel;
+}
+
+export function scrapeContainerForKinsectLevel(container) {
+    let kinsectLevel = parseInt(container.textContent.split(/\s/)[1]);
+    return kinsectLevel;
+}
+
+export function scrapeContainerForArcShot(container) {
+    let arcShot = container.textContent;
+    return arcShot;
+}
+
+export function scrapeContainerForChargeShot(container) {
+    let chargeShotData = container.textContent.split(/\s/);
+    return new ChargeShot({
+        name: chargeShotData[0],
+        level: chargeShotData[2],
+    });
+}
+
+export function scrapeContainerForCoatings(container) {
+    let coatingNames = container.innerHTML.split(/<img[^>]*>/);    
+    coatingNames.splice(0, 1);
+    
+    coatingNames.forEach((coating, i, arr) => {//text of coating names
+        coating = coating.replace(/&nbsp;/, '');//are between img elements
+        coating = coating.replace(/<br>/, '');
+        arr[i] = coating;        
+    });
+    
+    return coatingNames;
+}
+
+export function scrapeContainerForDeviation(container) {
+    let deviation = container.textContent;
+    return deviation;
+}
+
+export function scrapeContainerForRecoil(container) {
+    let recoil = container.textContent;
+    return recoil;
+}
+
+export function scrapeContainerForReloadSpeed(container) {
+    let reloadSpeed = container.textContent;
+    return reloadSpeed;
+}
+
+export function scrapeContainerForClusterType(container) {
+    let clusterType = container.textContent;
+    return clusterType;
+}
+
+export function scrapeContainerForSpecialAmmo(container) {
+    let specialAmmo = container.textContent;
+    return specialAmmo;
 }

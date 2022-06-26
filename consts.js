@@ -1,4 +1,4 @@
-import { chargeBladeResponse, greatSwordResponse, longSwordResponse, swordAndShieldResponse } from './responses.js';
+import { chargeBladeResponse, greatSwordResponse, longSwordResponse, swordAndShieldResponse, dualBladesResponse, hammerResponse, huntingHornResponse, lanceResponse, gunlanceResponse, switchAxeResponse, insectGlaiveResponse, bowResponse, lightBowgunResponse, heavyBowgunResponse } from './responses.js';
 
 export const WeaponTypeInfo = {
     LongSword: {
@@ -113,7 +113,7 @@ export const WeaponTypeInfo = {
         DefenseBonus: 5,
         Rarity: 6,
         RampageSkills: 7,
-        Crafting: 7,
+        Crafting: 8,
     },
 
     InsectGlaive: {
@@ -125,23 +125,24 @@ export const WeaponTypeInfo = {
         DefenseBonus: 5,
         Rarity: 6,
         RampageSkills: 7,
-        Crafting: 7,
+        Crafting: 8,
     },
 
     Bow: {
         NameSkill: 0,
         Damage: 1,
         ElementDamage: 2,
-        Arcshot: 3,
-        Charge1: 4,
+        Affinity: 3,
+        Arcshot: 4,
         Charge1: 5,
-        Charge1: 6,
-        Charge1: 7,
-        DefenseBonus: 8,
-        Rarity: 9,
-        RampageSkills: 10,
-        Coatings: 11,
-        Crafting: 12,
+        Charge2: 6,
+        Charge3: 7,
+        Charge4: 8,
+        DefenseBonus: 9,
+        Rarity: 10,
+        RampageSkills: 11,
+        Coatings: 12,
+        Crafting: 13,
     },
 
     LightBowgun: {
@@ -207,5 +208,85 @@ export const Requests = [
           method: 'GET',
         },
         response: swordAndShieldResponse,
-      },
+    },
+    {
+        options: {
+          hostname: 'monsterhunterrise.wiki.fextralife.com',
+          path: '/Dual+Blades+List',
+          method: 'GET',
+        },
+        response: dualBladesResponse,
+    },
+    {
+        options: {
+          hostname: 'monsterhunterrise.wiki.fextralife.com',
+          path: '/Hammers',
+          method: 'GET',
+        },
+        response: hammerResponse,
+    },
+    {
+        options: {
+          hostname: 'monsterhunterrise.wiki.fextralife.com',
+          path: '/Hunting+Horns',
+          method: 'GET',
+        },
+        response: huntingHornResponse,
+    },
+    {
+        options: {
+          hostname: 'monsterhunterrise.wiki.fextralife.com',
+          path: '/Lances',
+          method: 'GET',
+        },
+        response: lanceResponse,
+    },
+    {
+        options: {
+          hostname: 'monsterhunterrise.wiki.fextralife.com',
+          path: '/Gunlances',
+          method: 'GET',
+        },
+        response: gunlanceResponse,
+    },
+    {
+        options: {
+          hostname: 'monsterhunterrise.wiki.fextralife.com',
+          path: '/Switch+Axes',
+          method: 'GET',
+        },
+        response: switchAxeResponse,
+    },
+    {
+        options: {
+          hostname: 'monsterhunterrise.wiki.fextralife.com',
+          path: '/Insect+Glaives',
+          method: 'GET',
+        },
+        response: insectGlaiveResponse,
+    },
+    {
+        options: {
+          hostname: 'monsterhunterrise.wiki.fextralife.com',
+          path: '/Bows',
+          method: 'GET',
+        },
+        response: bowResponse,
+    },
+    {
+        options: {
+          hostname: 'monsterhunterrise.wiki.fextralife.com',
+          path: '/Light+Bowguns',
+          method: 'GET',
+        },
+        response: lightBowgunResponse,
+    },
+    {
+        options: {
+          hostname: 'monsterhunterrise.wiki.fextralife.com',
+          path: '/Heavy+Bowguns',
+          method: 'GET',
+        },
+        response: heavyBowgunResponse,
+    },
   ];
