@@ -1,4 +1,4 @@
-import { SkillSlot, Sharpness, ElementDamage, RampageSkill, Material, Melody, ChargeShot } from "./lib.js";
+import { SkillSlot, Sharpness, ElementDamage, RampageSkill, Material, Melody, ChargeShot } from "./weapons.js";
 
 export function scrapeContainerForName(container) {
     let name = container.textContent;

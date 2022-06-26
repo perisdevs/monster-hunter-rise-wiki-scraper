@@ -1,5 +1,5 @@
-import { scrapeContainerForAffinity, scrapeContainerForArcShot, scrapeContainerForChargeShot, scrapeContainerForClusterType, scrapeContainerForCoatings, scrapeContainerForDamage, scrapeContainerForDefenseBonus, scrapeContainerForDeviation, scrapeContainerForElementDamage, scrapeContainerForKinsectLevel, scrapeContainerForMaterials, scrapeContainerForMelodies, scrapeContainerForName, scrapeContainerForPhialType, scrapeContainerForRampageSkills, scrapeContainerForRarity, scrapeContainerForRecoil, scrapeContainerForReloadSpeed, scrapeContainerForSharpness, scrapeContainerForShellLevel, scrapeContainerForShellType, scrapeContainerForSkills, scrapeContainerForSpecialAmmo } from './requests.js';
-import { LongSword, GreatSword, ChargeBlade, SwordAndShield, DualBlades, Hammer, HuntingHorn, Lance, Gunlance, SwitchAxe, InsectGlaive, Bow, LightBowgun, HeavyBowgun } from './lib.js';
+import { scrapeContainerForAffinity, scrapeContainerForArcShot, scrapeContainerForChargeShot, scrapeContainerForClusterType, scrapeContainerForCoatings, scrapeContainerForDamage, scrapeContainerForDefenseBonus, scrapeContainerForDeviation, scrapeContainerForElementDamage, scrapeContainerForKinsectLevel, scrapeContainerForMaterials, scrapeContainerForMelodies, scrapeContainerForName, scrapeContainerForPhialType, scrapeContainerForRampageSkills, scrapeContainerForRarity, scrapeContainerForRecoil, scrapeContainerForReloadSpeed, scrapeContainerForSharpness, scrapeContainerForShellLevel, scrapeContainerForShellType, scrapeContainerForSkills, scrapeContainerForSpecialAmmo } from './weaponScrapers.js';
+import { LongSword, GreatSword, ChargeBlade, SwordAndShield, DualBlades, Hammer, HuntingHorn, Lance, Gunlance, SwitchAxe, InsectGlaive, Bow, LightBowgun, HeavyBowgun } from './weapons.js';
 import { WeaponTypeInfo } from './consts.js';
 import * as fs from 'fs';
 import * as jsdom from 'jsdom';
@@ -1093,7 +1093,7 @@ export function heavyBowgunResponse(res) {
         let fileName = weapon.name.replace(/\s/g, '-');      
 
         fs.writeFileSync(`weapons/heavy_bowguns/${fileName}.json`, weaponString);
-        console.log(weapon);
+        
         });
     });
 }
