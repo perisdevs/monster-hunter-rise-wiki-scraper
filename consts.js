@@ -1,4 +1,5 @@
 import { armsArmorResponse, chestArmorResponse, headArmorResponse, legsArmorResponse, waistArmorResponse } from './getArmors.js';
+import { materialResponse } from './getMaterials.js';
 import { chargeBladeResponse, greatSwordResponse, longSwordResponse, swordAndShieldResponse, dualBladesResponse, hammerResponse, huntingHornResponse, lanceResponse, gunlanceResponse, switchAxeResponse, insectGlaiveResponse, bowResponse, lightBowgunResponse, heavyBowgunResponse } from './getWeapons.js';
 
 export const WeaponTypeInfo = {
@@ -190,6 +191,13 @@ export const WeaponTypeInfo = {
     }
 };
 
+export const MaterialIndeces = {
+  Name: 0,
+  Rarity: 1,
+  Type: 2,
+  Sources: 3,
+};
+
 export const Requests = [
     {
       options: {
@@ -342,5 +350,13 @@ export const Requests = [
           method: 'GET',
         },
         response: legsArmorResponse,
+    },
+    {
+      options: {
+        hostname: 'monsterhunterrise.wiki.fextralife.com',
+        path: '/Materials',
+        method: 'GET',
+      },
+      response: materialResponse,
     },
   ];
