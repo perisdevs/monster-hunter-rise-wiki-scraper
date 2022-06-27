@@ -1,3 +1,4 @@
+import { armsArmorResponse, chestArmorResponse, headArmorResponse, legsArmorResponse, waistArmorResponse } from './getArmors.js';
 import { chargeBladeResponse, greatSwordResponse, longSwordResponse, swordAndShieldResponse, dualBladesResponse, hammerResponse, huntingHornResponse, lanceResponse, gunlanceResponse, switchAxeResponse, insectGlaiveResponse, bowResponse, lightBowgunResponse, heavyBowgunResponse } from './getWeapons.js';
 
 export const WeaponTypeInfo = {
@@ -173,6 +174,19 @@ export const WeaponTypeInfo = {
         Rarity: 9,
         RampageSkills: 10,
         Crafting: 11,
+    },
+
+    Armor: {
+        Name: 0,
+        Skills: 1,
+        SkillSlots: 2,
+        Rarity: 3,
+        Defense: 4,
+        Fire: 5,
+        Water: 6,
+        Thunder: 7,
+        Ice: 8,
+        Dragon: 9,
     }
 };
 
@@ -288,5 +302,45 @@ export const Requests = [
           method: 'GET',
         },
         response: heavyBowgunResponse,
+    },
+    {
+        options: {
+          hostname: 'monsterhunterrise.wiki.fextralife.com',
+          path: '/Head+Armor',
+          method: 'GET',
+        },
+        response: headArmorResponse,
+    },
+    {
+        options: {
+          hostname: 'monsterhunterrise.wiki.fextralife.com',
+          path: '/Chest+Armor',
+          method: 'GET',
+        },
+        response: chestArmorResponse,
+    },
+    {
+        options: {
+          hostname: 'monsterhunterrise.wiki.fextralife.com',
+          path: '/Arms+Armor',
+          method: 'GET',
+        },
+        response: armsArmorResponse,
+    },
+    {
+        options: {
+          hostname: 'monsterhunterrise.wiki.fextralife.com',
+          path: '/Waist+Armor',
+          method: 'GET',
+        },
+        response: waistArmorResponse,
+    },
+    {
+        options: {
+          hostname: 'monsterhunterrise.wiki.fextralife.com',
+          path: '/Legs+Armor',
+          method: 'GET',
+        },
+        response: legsArmorResponse,
     },
   ];
