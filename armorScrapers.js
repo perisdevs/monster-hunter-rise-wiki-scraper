@@ -1,4 +1,5 @@
-import { Skill, SkillSlot } from "./weapons.js";
+import { SkillSlot } from "./weapons.js";
+import { Skill } from "./skills.js";
 
 export function scrapeContainerForName(container) {
     let name = container.textContent.trim();

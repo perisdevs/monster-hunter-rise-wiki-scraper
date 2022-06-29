@@ -170,10 +170,3 @@ export class HeavyBowgun extends Weapon {
         this.specialAmmo = props.specialAmmo;
     }
 }
-
-export class Skill {
-    constructor(props) {
-        this.name = props.name;
-        this.level = props.level;
-    }
-}

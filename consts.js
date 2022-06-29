@@ -1,5 +1,6 @@
 import { armsArmorResponse, chestArmorResponse, headArmorResponse, legsArmorResponse, waistArmorResponse } from './getArmors.js';
 import { materialResponse } from './getMaterials.js';
+import { skillResponse } from './getSkills.js';
 import { chargeBladeResponse, greatSwordResponse, longSwordResponse, swordAndShieldResponse, dualBladesResponse, hammerResponse, huntingHornResponse, lanceResponse, gunlanceResponse, switchAxeResponse, insectGlaiveResponse, bowResponse, lightBowgunResponse, heavyBowgunResponse } from './getWeapons.js';
 
 export const WeaponTypeInfo = {
@@ -198,6 +199,13 @@ export const MaterialIndeces = {
   Sources: 3,
 };
 
+export const SkillIndeces = {
+  Name: 0,
+  Description: 1,
+  Level: 2,
+  Progression: 3,
+};
+
 export const Requests = [
     {
       options: {
@@ -358,5 +366,13 @@ export const Requests = [
         method: 'GET',
       },
       response: materialResponse,
+    },
+    {
+      options: {
+        hostname: 'monsterhunterrise.wiki.fextralife.com',
+        path: '/Skills',
+        method: 'GET',
+      },
+      response: skillResponse,
     },
   ];

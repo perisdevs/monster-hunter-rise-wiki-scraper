@@ -4,8 +4,7 @@ export function scrapeContainerForName(container) {
     let name = container.textContent;
     name = name.trim(name);
     name = name.split('\n'); //some names contain sharpness text
-    name = name[0].trim(name[0]);
-    
+    name = name[0].trim(name[0]);    
     return name;
 }
 
@@ -116,6 +115,7 @@ export function scrapeContainerForRampageSkills(container) {
 }
 
 export function scrapeContainerForMaterials(container) {
+    if (container === undefined) return;
     let hasMaterials = Boolean(container.querySelector('ul')); //One item has no materials        
 
     let materials = [];
@@ -151,7 +151,7 @@ export function scrapeContainerForMaterials(container) {
             materials.push(new Material({
                 name: name,
                 quantity: parseInt(splitData[splitData.length-1]),
-            }));
+            }));            
             }
             
         }

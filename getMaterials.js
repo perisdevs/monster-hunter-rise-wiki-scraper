@@ -45,9 +45,7 @@ export function materialResponse(res) {
                 rarity: rarity,
                 type: type,
                 sources: sources,
-            });
-
-            console.log(material);
+            });            
 
             let materialString = JSON.stringify(material);
             let fileName = material.name.replace(/\s/g, '-');
