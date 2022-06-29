@@ -3,4 +3,4 @@ Scrapes Monster Hunter Rise Wiki pages (https://monsterhunterrise.wiki.fextralif
 
 # How to use 
 
-Run the program by running `node index` in the root foler. The scraped data will be saved in the root folder as JSON files.
+Run the program by running `npm start` in the root foler. The scraped data will be saved in the root folder as JSON files.
