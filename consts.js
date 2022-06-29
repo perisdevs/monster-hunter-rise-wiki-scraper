@@ -1,4 +1,5 @@
 import { armsArmorResponse, chestArmorResponse, headArmorResponse, legsArmorResponse, waistArmorResponse } from './getArmors.js';
+import { decorationResponse } from './getDecorations.js';
 import { materialResponse } from './getMaterials.js';
 import { skillResponse } from './getSkills.js';
 import { chargeBladeResponse, greatSwordResponse, longSwordResponse, swordAndShieldResponse, dualBladesResponse, hammerResponse, huntingHornResponse, lanceResponse, gunlanceResponse, switchAxeResponse, insectGlaiveResponse, bowResponse, lightBowgunResponse, heavyBowgunResponse } from './getWeapons.js';
@@ -206,6 +207,14 @@ export const SkillIndeces = {
   Progression: 3,
 };
 
+export const DecorationIndeces = {
+  Name: 0,
+  SlotLevel: 1,
+  Rarity: 2,
+  Skill: 3,
+  Crafting: 6,
+};
+
 export const Requests = [
     {
       options: {
@@ -374,5 +383,13 @@ export const Requests = [
         method: 'GET',
       },
       response: skillResponse,
+    },
+    {
+      options: {
+        hostname: 'monsterhunterrise.wiki.fextralife.com',
+        path: '/Decorations',
+        method: 'GET',
+      },
+      response: decorationResponse,
     },
   ];
