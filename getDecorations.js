@@ -50,7 +50,7 @@ export function decorationResponse(res) {
                 materials: materials,
             });
 
-            let decorationString = JSON.stringify(skill);
+            let decorationString = JSON.stringify(decoration);
             let fileName = decoration.name.replace(/\s/g, '-');
             fs.writeFileSync(`decorations/${fileName}.json`, decorationString);
         });

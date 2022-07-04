@@ -31,7 +31,7 @@ export function headArmorResponse(res) {
 
         let containers = document.querySelectorAll('table.wiki_table tbody');
 
-        let highRankContainer = containers[0];
+        let highRankContainer = containers[1];
         let highRankArmors = Array.from(highRankContainer.children);
 
         let scrapedHighRankArmors = [];
@@ -41,7 +41,7 @@ export function headArmorResponse(res) {
             scrapedHighRankArmors.push(headArmor);
         });        
 
-        let lowRankContainer = containers[1];        
+        let lowRankContainer = containers[2];        
         let lowRankArmors = Array.from(lowRankContainer.children);
         
         let scrapedLowRankArmors = [];
@@ -51,7 +51,7 @@ export function headArmorResponse(res) {
             scrapedLowRankArmors.push(headArmor);
         });
 
-        let masterRankContainer = containers[2];
+        let masterRankContainer = containers[0];
         let masterRankArmors = Array.from(masterRankContainer.children);
 
         let scrapedMasterRankArmors = [];
@@ -108,7 +108,7 @@ export function chestArmorResponse(res) {
 
         let containers = document.querySelectorAll('table.wiki_table tbody');
 
-        let highRankContainer = containers[0];
+        let highRankContainer = containers[1];
         let highRankArmors = Array.from(highRankContainer.children);
 
         let scrapedHighRankArmors = [];
@@ -118,7 +118,7 @@ export function chestArmorResponse(res) {
             scrapedHighRankArmors.push(chestArmor);
         });        
 
-        let lowRankContainer = containers[1];        
+        let lowRankContainer = containers[2];        
         let lowRankArmors = Array.from(lowRankContainer.children);
         
         let scrapedLowRankArmors = [];
@@ -128,7 +128,7 @@ export function chestArmorResponse(res) {
             scrapedLowRankArmors.push(chestArmor);
         });
 
-        let masterRankContainer = containers[2];
+        let masterRankContainer = containers[0];
         let masterRankArmors = Array.from(masterRankContainer.children);
 
         let scrapedMasterRankArmors = [];
@@ -185,7 +185,7 @@ export function armsArmorResponse(res) {
 
         let containers = document.querySelectorAll('table.wiki_table tbody');
 
-        let highRankContainer = containers[0];
+        let highRankContainer = containers[1];
         let highRankArmors = Array.from(highRankContainer.children);
 
         let scrapedHighRankArmors = [];
@@ -195,7 +195,7 @@ export function armsArmorResponse(res) {
             scrapedHighRankArmors.push(armsArmor);
         });        
 
-        let lowRankContainer = containers[1];        
+        let lowRankContainer = containers[2];        
         let lowRankArmors = Array.from(lowRankContainer.children);
         
         let scrapedLowRankArmors = [];
@@ -205,7 +205,7 @@ export function armsArmorResponse(res) {
             scrapedLowRankArmors.push(armsArmor);
         });
 
-        let masterRankContainer = containers[2];
+        let masterRankContainer = containers[0];
         let masterRankArmors = Array.from(masterRankContainer.children);
 
         let scrapedMasterRankArmors = [];
@@ -262,7 +262,7 @@ export function waistArmorResponse(res) {
 
         let containers = document.querySelectorAll('table.wiki_table tbody');
 
-        let highRankContainer = containers[0];
+        let highRankContainer = containers[1];
         let highRankArmors = Array.from(highRankContainer.children);
 
         let scrapedHighRankArmors = [];
@@ -272,7 +272,7 @@ export function waistArmorResponse(res) {
             scrapedHighRankArmors.push(waistArmor);
         });        
 
-        let lowRankContainer = containers[1];        
+        let lowRankContainer = containers[2];        
         let lowRankArmors = Array.from(lowRankContainer.children);
         
         let scrapedLowRankArmors = [];
@@ -282,7 +282,7 @@ export function waistArmorResponse(res) {
             scrapedLowRankArmors.push(waistArmor);
         });
 
-        let masterRankContainer = containers[2];
+        let masterRankContainer = containers[0];
         let masterRankArmors = Array.from(masterRankContainer.children);
 
         let scrapedMasterRankArmors = [];
@@ -339,7 +339,7 @@ export function legsArmorResponse(res) {
 
         let containers = document.querySelectorAll('table.wiki_table tbody');
 
-        let highRankContainer = containers[0];
+        let highRankContainer = containers[1];
         let highRankArmors = Array.from(highRankContainer.children);
 
         let scrapedHighRankArmors = [];
@@ -349,7 +349,7 @@ export function legsArmorResponse(res) {
             scrapedHighRankArmors.push(legsArmor);
         });        
 
-        let lowRankContainer = containers[1];        
+        let lowRankContainer = containers[2];        
         let lowRankArmors = Array.from(lowRankContainer.children);
         
         let scrapedLowRankArmors = [];
@@ -359,7 +359,7 @@ export function legsArmorResponse(res) {
             scrapedLowRankArmors.push(legsArmor);
         });
 
-        let masterRankContainer = containers[2];
+        let masterRankContainer = containers[0];
         let masterRankArmors = Array.from(masterRankContainer.children);
 
         let scrapedMasterRankArmors = [];

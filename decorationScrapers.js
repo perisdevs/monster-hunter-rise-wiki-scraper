@@ -1,7 +1,7 @@
 import { Material } from "./weapons.js";
 
 export function scrapeContainerForName(container) {
-    let name = container.textContent;
+    let name = container.textContent.trim();
     return name;
 }
 
@@ -21,7 +21,7 @@ export function scrapeContainerForRarity(container) {
 }
 
 export function scrapeContainerForSkill(container) {
-    let skill = container.textContent.replace(/x\d/, '');
+    let skill = container.textContent.replace(/x\d/, '').trim();
     return skill;
 }
 
