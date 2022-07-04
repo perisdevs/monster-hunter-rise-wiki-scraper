@@ -31,7 +31,7 @@ export function scrapeContainerForSkills(container) {
 }
 
 export function scrapeContainerForSharpness(container) {
-    let sharpnessData = Array.from(container.querySelector('.progress').children); //sharpness is stored as a series of divs
+    /*let sharpnessData = Array.from(container.querySelector('.progress').children); //sharpness is stored as a series of divs
 
     let sharpnessStats = [];
 
@@ -49,7 +49,8 @@ export function scrapeContainerForSharpness(container) {
     white: sharpnessStats[5],
     });
 
-    return sharpness;
+    return sharpness;*/
+    return null;
 }
 
 export function scrapeContainerForDamage(container) {

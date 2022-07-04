@@ -1,13 +1,8 @@
-import * as https from 'https';
 import { Requests } from './consts.js';
+import { Scraper } from './scrapers.js';
 
-Requests.forEach((request) => {
-  const req = https.request(request.options, request.response);
+const scraper = new Scraper();
+scraper.addRequests(Requests);
+scraper.scrapeAll();
 
-  req.on('error', error => {
-    console.error(error);
-  });
-  
-  req.end();
-});
 

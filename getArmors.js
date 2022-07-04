@@ -16,6 +16,10 @@ export function headArmorResponse(res) {
         fs.mkdirSync('armors/head/low', {recursive: true});
     }
 
+    if (!fs.existsSync('armors/head/master')) {
+        fs.mkdirSync('armors/head/master', {recursive: true});
+    }
+
     let responseText = '';
     res.on('data', d => {
         responseText += d;
@@ -47,6 +51,16 @@ export function headArmorResponse(res) {
             scrapedLowRankArmors.push(headArmor);
         });
 
+        let masterRankContainer = containers[2];
+        let masterRankArmors = Array.from(masterRankContainer.children);
+
+        let scrapedMasterRankArmors = [];
+
+        masterRankArmors.forEach((row) => {
+            let headArmor = new HeadArmor(scrapeRowForArmor(row, headArmorIndeces));
+            scrapedMasterRankArmors.push(headArmor);
+        });
+
         scrapedHighRankArmors.forEach((armor) => {
             let armorString = JSON.stringify(armor);
             let fileName = armor.name.replace(/\s/g, '-');
@@ -57,6 +71,12 @@ export function headArmorResponse(res) {
             let armorString = JSON.stringify(armor);
             let fileName = armor.name.replace(/\s/g, '-');
             fs.writeFileSync(`armors/head/low/${fileName}.json`, armorString);
+        });
+
+        scrapedMasterRankArmors.forEach((armor) => {
+            let armorString = JSON.stringify(armor);
+            let fileName = armor.name.replace(/\s/g, '-');
+            fs.writeFileSync(`armors/head/master/${fileName}.json`, armorString);
         });
 
     });
@@ -71,6 +91,10 @@ export function chestArmorResponse(res) {
 
     if (!fs.existsSync('armors/chest/low')) {
         fs.mkdirSync('armors/chest/low', {recursive: true});
+    }
+
+    if (!fs.existsSync('armors/chest/master')) {
+        fs.mkdirSync('armors/chest/master', {recursive: true});
     }
 
     let responseText = '';
@@ -104,6 +128,16 @@ export function chestArmorResponse(res) {
             scrapedLowRankArmors.push(chestArmor);
         });
 
+        let masterRankContainer = containers[2];
+        let masterRankArmors = Array.from(masterRankContainer.children);
+
+        let scrapedMasterRankArmors = [];
+
+        masterRankArmors.forEach((row) => {
+            let chestArmor = new ChestArmor(scrapeRowForArmor(row, chestArmorIndeces));
+            scrapedMasterRankArmors.push(chestArmor);
+        });
+
         scrapedHighRankArmors.forEach((armor) => {
             let armorString = JSON.stringify(armor);
             let fileName = armor.name.replace(/\s/g, '-');
@@ -114,6 +148,12 @@ export function chestArmorResponse(res) {
             let armorString = JSON.stringify(armor);
             let fileName = armor.name.replace(/\s/g, '-');
             fs.writeFileSync(`armors/chest/low/${fileName}.json`, armorString);
+        });
+
+        scrapedMasterRankArmors.forEach((armor) => {
+            let armorString = JSON.stringify(armor);
+            let fileName = armor.name.replace(/\s/g, '-');
+            fs.writeFileSync(`armors/chest/master/${fileName}.json`, armorString);
         });
 
     });
@@ -128,6 +168,10 @@ export function armsArmorResponse(res) {
 
     if (!fs.existsSync('armors/arms/low')) {
         fs.mkdirSync('armors/arms/low', {recursive: true});
+    }
+
+    if (!fs.existsSync('armors/arms/master')) {
+        fs.mkdirSync('armors/arms/master', {recursive: true});
     }
 
     let responseText = '';
@@ -161,6 +205,16 @@ export function armsArmorResponse(res) {
             scrapedLowRankArmors.push(armsArmor);
         });
 
+        let masterRankContainer = containers[2];
+        let masterRankArmors = Array.from(masterRankContainer.children);
+
+        let scrapedMasterRankArmors = [];
+
+        masterRankArmors.forEach((row) => {
+            let armsArmor = new ArmsArmor(scrapeRowForArmor(row, armsArmorIndeces));
+            scrapedMasterRankArmors.push(armsArmor);
+        });
+
         scrapedHighRankArmors.forEach((armor) => {
             let armorString = JSON.stringify(armor);
             let fileName = armor.name.replace(/\s/g, '-');
@@ -171,6 +225,12 @@ export function armsArmorResponse(res) {
             let armorString = JSON.stringify(armor);
             let fileName = armor.name.replace(/\s/g, '-');
             fs.writeFileSync(`armors/arms/low/${fileName}.json`, armorString);
+        });
+
+        scrapedMasterRankArmors.forEach((armor) => {
+            let armorString = JSON.stringify(armor);
+            let fileName = armor.name.replace(/\s/g, '-');
+            fs.writeFileSync(`armors/arms/master/${fileName}.json`, armorString);
         });
 
     });
@@ -185,6 +245,10 @@ export function waistArmorResponse(res) {
 
     if (!fs.existsSync('armors/waist/low')) {
         fs.mkdirSync('armors/waist/low', {recursive: true});
+    }
+
+    if (!fs.existsSync('armors/waist/master')) {
+        fs.mkdirSync('armors/waist/master', {recursive: true});
     }
 
     let responseText = '';
@@ -218,6 +282,16 @@ export function waistArmorResponse(res) {
             scrapedLowRankArmors.push(waistArmor);
         });
 
+        let masterRankContainer = containers[2];
+        let masterRankArmors = Array.from(masterRankContainer.children);
+
+        let scrapedMasterRankArmors = [];
+
+        masterRankArmors.forEach((row) => {
+            let waistArmor = new WaistArmor(scrapeRowForArmor(row, waistArmorIndeces));
+            scrapedMasterRankArmors.push(waistArmor);
+        });
+
         scrapedHighRankArmors.forEach((armor) => {
             let armorString = JSON.stringify(armor);
             let fileName = armor.name.replace(/\s/g, '-');
@@ -228,6 +302,12 @@ export function waistArmorResponse(res) {
             let armorString = JSON.stringify(armor);
             let fileName = armor.name.replace(/\s/g, '-');
             fs.writeFileSync(`armors/waist/low/${fileName}.json`, armorString);
+        });
+
+        scrapedMasterRankArmors.forEach((armor) => {
+            let armorString = JSON.stringify(armor);
+            let fileName = armor.name.replace(/\s/g, '-');
+            fs.writeFileSync(`armors/waist/master/${fileName}.json`, armorString);
         });
 
     });
@@ -242,6 +322,10 @@ export function legsArmorResponse(res) {
 
     if (!fs.existsSync('armors/legs/low')) {
         fs.mkdirSync('armors/legs/low', {recursive: true});
+    }
+
+    if (!fs.existsSync('armors/legs/master')) {
+        fs.mkdirSync('armors/legs/master', {recursive: true});
     }
 
     let responseText = '';
@@ -275,6 +359,16 @@ export function legsArmorResponse(res) {
             scrapedLowRankArmors.push(legsArmor);
         });
 
+        let masterRankContainer = containers[2];
+        let masterRankArmors = Array.from(masterRankContainer.children);
+
+        let scrapedMasterRankArmors = [];
+
+        masterRankArmors.forEach((row) => {
+            let legsArmor = new LegsArmor(scrapeRowForArmor(row, legsArmorIndeces));
+            scrapedMasterRankArmors.push(legsArmor);
+        });
+
         scrapedHighRankArmors.forEach((armor) => {
             let armorString = JSON.stringify(armor);
             let fileName = armor.name.replace(/\s/g, '-');
@@ -285,6 +379,12 @@ export function legsArmorResponse(res) {
             let armorString = JSON.stringify(armor);
             let fileName = armor.name.replace(/\s/g, '-');
             fs.writeFileSync(`armors/legs/low/${fileName}.json`, armorString);
+        });
+
+        scrapedMasterRankArmors.forEach((armor) => {
+            let armorString = JSON.stringify(armor);
+            let fileName = armor.name.replace(/\s/g, '-');
+            fs.writeFileSync(`armors/legs/master/${fileName}.json`, armorString);
         });
 
     });

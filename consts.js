@@ -36,7 +36,7 @@ export const WeaponTypeInfo = {
         DefenseBonus: 4,
         Rarity: 5,
         RampageSkills: 6,
-        Crafting: 8,
+        Crafting: 7,
     },
 
     SwordAndShield: {
@@ -216,7 +216,7 @@ export const DecorationIndeces = {
 };
 
 export const Requests = [
-    {
+    /*{
       options: {
         hostname: 'monsterhunterrise.wiki.fextralife.com',
         path: '/Long+Swords',
@@ -327,7 +327,7 @@ export const Requests = [
           method: 'GET',
         },
         response: heavyBowgunResponse,
-    },
+    },*/
     {
         options: {
           hostname: 'monsterhunterrise.wiki.fextralife.com',
