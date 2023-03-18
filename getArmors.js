@@ -38,6 +38,7 @@ export function headArmorResponse(res) {
 
         highRankArmors.forEach((row) => {
             let headArmor = new HeadArmor(scrapeRowForArmor(row, headArmorIndeces));
+            headArmor.type = 'head';
             scrapedHighRankArmors.push(headArmor);
         });        
 
@@ -48,6 +49,7 @@ export function headArmorResponse(res) {
 
         lowRankArmors.forEach((row) => {
             let headArmor = new HeadArmor(scrapeRowForArmor(row, headArmorIndeces));
+            headArmor.type = 'head';
             scrapedLowRankArmors.push(headArmor);
         });
 
@@ -58,6 +60,7 @@ export function headArmorResponse(res) {
 
         masterRankArmors.forEach((row) => {
             let headArmor = new HeadArmor(scrapeRowForArmor(row, headArmorIndeces));
+            headArmor.type = 'head';
             scrapedMasterRankArmors.push(headArmor);
         });
 
@@ -115,6 +118,7 @@ export function chestArmorResponse(res) {
 
         highRankArmors.forEach((row) => {
             let chestArmor = new ChestArmor(scrapeRowForArmor(row, chestArmorIndeces));
+            chestArmor.type = 'chest';
             scrapedHighRankArmors.push(chestArmor);
         });        
 
@@ -125,6 +129,7 @@ export function chestArmorResponse(res) {
 
         lowRankArmors.forEach((row) => {
             let chestArmor = new ChestArmor(scrapeRowForArmor(row, chestArmorIndeces));
+            chestArmor.type = 'chest';
             scrapedLowRankArmors.push(chestArmor);
         });
 
@@ -135,6 +140,7 @@ export function chestArmorResponse(res) {
 
         masterRankArmors.forEach((row) => {
             let chestArmor = new ChestArmor(scrapeRowForArmor(row, chestArmorIndeces));
+            chestArmor.type = 'chest';
             scrapedMasterRankArmors.push(chestArmor);
         });
 
@@ -192,6 +198,7 @@ export function armsArmorResponse(res) {
 
         highRankArmors.forEach((row) => {
             let armsArmor = new ArmsArmor(scrapeRowForArmor(row, armsArmorIndeces));
+            armsArmor.type = 'arms';
             scrapedHighRankArmors.push(armsArmor);
         });        
 
@@ -202,6 +209,7 @@ export function armsArmorResponse(res) {
 
         lowRankArmors.forEach((row) => {
             let armsArmor = new ArmsArmor(scrapeRowForArmor(row, armsArmorIndeces));
+            armsArmor.type = 'arms';
             scrapedLowRankArmors.push(armsArmor);
         });
 
@@ -212,6 +220,7 @@ export function armsArmorResponse(res) {
 
         masterRankArmors.forEach((row) => {
             let armsArmor = new ArmsArmor(scrapeRowForArmor(row, armsArmorIndeces));
+            armsArmor.type = 'arms';
             scrapedMasterRankArmors.push(armsArmor);
         });
 
@@ -269,6 +278,7 @@ export function waistArmorResponse(res) {
 
         highRankArmors.forEach((row) => {
             let waistArmor = new WaistArmor(scrapeRowForArmor(row, waistArmorIndeces));
+            waistArmor.type = 'waist';
             scrapedHighRankArmors.push(waistArmor);
         });        
 
@@ -279,6 +289,7 @@ export function waistArmorResponse(res) {
 
         lowRankArmors.forEach((row) => {
             let waistArmor = new WaistArmor(scrapeRowForArmor(row, waistArmorIndeces));
+            waistArmor.type = 'waist';
             scrapedLowRankArmors.push(waistArmor);
         });
 
@@ -289,6 +300,7 @@ export function waistArmorResponse(res) {
 
         masterRankArmors.forEach((row) => {
             let waistArmor = new WaistArmor(scrapeRowForArmor(row, waistArmorIndeces));
+            waistArmor.type = 'waist';
             scrapedMasterRankArmors.push(waistArmor);
         });
 
@@ -346,6 +358,7 @@ export function legsArmorResponse(res) {
 
         highRankArmors.forEach((row) => {
             let legsArmor = new LegsArmor(scrapeRowForArmor(row, legsArmorIndeces));
+            legsArmor.type = 'legs';
             scrapedHighRankArmors.push(legsArmor);
         });        
 
@@ -356,6 +369,7 @@ export function legsArmorResponse(res) {
 
         lowRankArmors.forEach((row) => {
             let legsArmor = new LegsArmor(scrapeRowForArmor(row, legsArmorIndeces));
+            legsArmor.type = 'legs';
             scrapedLowRankArmors.push(legsArmor);
         });
 
@@ -366,6 +380,7 @@ export function legsArmorResponse(res) {
 
         masterRankArmors.forEach((row) => {
             let legsArmor = new LegsArmor(scrapeRowForArmor(row, legsArmorIndeces));
+            legsArmor.type = 'legs';
             scrapedMasterRankArmors.push(legsArmor);
         });
 

@@ -46,10 +46,7 @@ export function scrapeContainerForSkillSlots(container) {
             return;
         }
 
-        skillSlots.push(new SkillSlot({
-            level: level,
-            skill: null,
-        }));
+        skillSlots.push(level);
     });
 
     return skillSlots;
