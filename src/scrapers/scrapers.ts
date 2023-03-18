@@ -1,4 +1,13 @@
-/*export class Scrape {
+export class Scrape<T extends Object> {
     filepath: string;
-    scrapingFunction: ()
-}*/
+    scrapingFunction: () => T;
+
+    constructor(filepath: string, scrapingFunction: () => T) {
+        this.filepath = filepath;
+        this.scrapingFunction = scrapingFunction;
+    }
+
+    scrape() {
+        return this.scrapingFunction;
+    }
+}
