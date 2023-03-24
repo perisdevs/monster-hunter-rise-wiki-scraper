@@ -9,11 +9,22 @@ export class FileManager {
         this.paths.push(path);
     }
 
-    createPaths() {
-        this.paths.forEach((path) => {
-            if (!fs.existsSync(path)) {
-                fs.mkdirSync('path', { recursive: true });
-            }
+    createPath(path: string) {
+        if (!this.paths.includes(path)) this.addPath(path);
+        if (!fs.existsSync(path)) {
+            fs.mkdirSync(path, { recursive: true });
+        }
+    }
+
+    writeObject(path: string, filename: string, obj: any) {
+        fs.writeFileSync(`${path}/${filename}.json`, JSON.stringify(obj));
+    }
+
+    writeArray(path: string, array: any[]) {
+        if (!this.paths.includes(path)) this.addPath(path);
+        this.createPath(path);
+        array.forEach((obj, i) => {
+            this.writeObject(path, i.toString(), obj);
         });
     }
 }

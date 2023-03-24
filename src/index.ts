@@ -10,10 +10,3 @@ scraper.scrapeAll();*/
 const pathToExample = './download_output/armor/arms.html';
 const document = getFileAsDOM(pathToExample);
 getArmorFromDom('arms', document);
-/*const table = document.querySelector('tbody');
-if (table) {
-    const elementArray = getTableAsArray<Object>(table, (row) => {
-        console.log(row.textContent);
-        return row;
-    });
-}*/
