@@ -1,7 +1,7 @@
 import { ExtractedArmor, ExtractedSkill, ArmorType, ArmorRank } from "../interfaces";
 import { getTableAsArray } from "../util/util";
 
-export function getArmorFromDom(armorType: ArmorType, document: Document): void {
+export function getArmorFromDom(armorType: ArmorType, document: Document): ExtractedArmor[] {
 
     const rankedContainers = Array.from(document.querySelectorAll('table.wiki_table tbody'));
 
@@ -71,5 +71,5 @@ export function getArmorFromDom(armorType: ArmorType, document: Document): void 
         });
     });
     
-    console.log(allArmor[0]);
+    return allArmor;
 }
