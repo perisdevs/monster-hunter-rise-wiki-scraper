@@ -1,9 +1,11 @@
 # monster-hunter-rise-wiki-scraper
-Scrapes Monster Hunter Rise Wiki pages (https://monsterhunterrise.wiki.fextralife.com/Monster+Hunter+Rise+Wiki) and creates JSON files based on the game's items.
+Uses a shell script to download pages from Fextralife's Monster Hunter Rise wiki (https://monsterhunterrise.wiki.fextralife.com/Monster+Hunter+Rise+Wiki), and then scrapes the HTML files to create JSON objects based on in-game items.
 
 # How to use 
 
-Run the program by running `npm start` in the root foler. The scraped data will be saved in the root folder as JSON files.
+You can run the downloader script by running `./downloader.sh` in the root folder. This script will use `curl` to download webpages from the wiki. The webpages will be saved as HTML files in `./download_output`.
+
+After the script has finished running, you can run `npm start` in the root folder. The downloaded webpages will then be scraped and JSON files will be written to the disk in `./scrape_output`.
 
 # Weapons
 
