@@ -35,6 +35,14 @@ export function getFileAsDOM(filepath: string): Document {
     return document;
 }
 
+export function getStringsAsDOMs(filepaths:  string[]) {
+    const documents: Document[] = [];
+    filepaths.forEach((path) => {
+        documents.push(getFileAsDOM(path));
+    });
+    return documents;
+}
+
 export function getTableAsArray<T extends Object>(
     table: Element,
     rowParser: (row: HTMLTableRowElement) => T) : T[] {
