@@ -1,4 +1,4 @@
-import { ExtractedArmor, ExtractedSkill, ArmorType, ArmorRank } from "../interfaces";
+import { ExtractedArmor, ExtractedArmorSkill, ArmorType, ArmorRank } from "../interfaces";
 import { getTableAsArray } from "../util/util";
 
 export function getArmorFromDom(armorType: ArmorType, document: Document): ExtractedArmor[] {
@@ -24,7 +24,7 @@ export function getArmorFromDom(armorType: ArmorType, document: Document): Extra
             const skillContainers = Array.from(cells[1].querySelectorAll('a'));
             const skillLevels = cells[1].textContent?.match(/\d/g);
     
-            const skills: ExtractedSkill[] = [];
+            const skills: ExtractedArmorSkill[] = [];
             if (skillLevels) {
                 skillContainers.forEach((ctr, i) => {                
                     if (ctr.textContent && skillLevels[i]) {

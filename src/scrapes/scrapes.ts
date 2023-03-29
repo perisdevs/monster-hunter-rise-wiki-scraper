@@ -1,5 +1,6 @@
 import { getArmorFromDom } from "../scrapers/getArmor";
-import { getStringsAsDOMs } from "../util/util";
+import { getSkillsFromDom } from "../scrapers/getSkills";
+import { getFileAsDOM, getStringsAsDOMs } from "../util/util";
 
 const armorDocs: Document[] = getStringsAsDOMs([
     './download_output/armor/arms.html',
@@ -16,3 +17,7 @@ export const armorScrapes = [
     getArmorFromDom('legs', armorDocs[3]),
     getArmorFromDom('waist', armorDocs[4]),
 ];
+
+const skillDocumentInputPath = './download_output/skills.html';
+
+export const skillScrape = getSkillsFromDom(getFileAsDOM(skillDocumentInputPath));

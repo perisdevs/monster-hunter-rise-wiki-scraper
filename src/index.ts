@@ -1,7 +1,5 @@
-import { armorScrapes } from "./scrapes/scrapes";
+import { skillScrape } from "./scrapes/scrapes";
 
-armorScrapes.forEach((scrape) => {
-    scrape.forEach((obj) => {
-        console.log(obj);
-    });
+skillScrape.forEach((scrape) => {
+    console.log(scrape);
 });

@@ -1,14 +1,14 @@
 export type ArmorType = 'head' | 'chest' | 'arms' | 'waist' | 'legs';
 export type ArmorRank = 'master' | 'high' | 'low' | '';
 
-export interface ExtractedSkill {
+export interface ExtractedArmorSkill {
     name: string;
     level: Number;
 }
 
 export interface ExtractedArmor {
     name: string;
-    skills: ExtractedSkill[];
+    skills: ExtractedArmorSkill[];
     decorationSlots: Number[];
     rarity: Number;
     defense: Number;
@@ -19,4 +19,16 @@ export interface ExtractedArmor {
     dragon: Number;
     slot: string;
     rank: string;
+}
+
+export interface ExtractedSkillProgressionStage {
+    level: Number;
+    effect: string;
+}
+
+export interface ExtractedSkill {
+    name: string;
+    description: string;
+    maxLevel: Number;
+    progression: ExtractedSkillProgressionStage[];
 }
