@@ -1,4 +1,5 @@
 import { getArmorFromDom } from "../scrapers/getArmor";
+import { getDecorationsFromDom } from "../scrapers/getDecorations";
 import { getSkillsFromDom } from "../scrapers/getSkills";
 import { getFileAsDOM, getStringsAsDOMs } from "../util/util";
 
@@ -21,3 +22,7 @@ export const armorScrapes = [
 const skillDocumentInputPath = './download_output/skills.html';
 
 export const skillScrape = getSkillsFromDom(getFileAsDOM(skillDocumentInputPath));
+
+const decorationDocumentInputPath = './download_output/decorations.html';
+
+export const decorationScrape = getDecorationsFromDom(getFileAsDOM(decorationDocumentInputPath));

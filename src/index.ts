@@ -1,5 +1,5 @@
-import { skillScrape } from "./scrapes/scrapes";
+import { decorationScrape } from "./scrapes/scrapes";
 
-skillScrape.forEach((scrape) => {
+decorationScrape.forEach((scrape) => {
     console.log(scrape);
 });

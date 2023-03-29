@@ -32,3 +32,10 @@ export interface ExtractedSkill {
     maxLevel: Number;
     progression: ExtractedSkillProgressionStage[];
 }
+
+export interface ExtractedDecoration {
+    name: string;
+    slotLevel: Number;
+    rarity: Number;
+    skill: string;
+}
