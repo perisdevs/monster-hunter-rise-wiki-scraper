@@ -19,6 +19,7 @@ declare -a URL_ARRAY=(
     "https://monsterhunterrise.wiki.fextralife.com/Waist+Armor"
     "https://monsterhunterrise.wiki.fextralife.com/Legs+Armor"
     "https://monsterhunterrise.wiki.fextralife.com/Materials"
+    "https://monsterhunterrise.wiki.fextralife.com/Master+Rank+Materials"
     "https://monsterhunterrise.wiki.fextralife.com/Decorations"
     "https://monsterhunterrise.wiki.fextralife.com/Skills"
 )
@@ -44,6 +45,7 @@ declare -a OUTFILE_ARRAY=(
     "./download_output/armor/waist.html"
     "./download_output/armor/legs.html"
     "./download_output/materials.html"
+    "./download_output/master_rank_materials.html"
     "./download_output/decorations.html"
     "./download_output/skills.html"
 )

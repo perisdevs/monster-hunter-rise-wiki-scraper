@@ -1,5 +1,5 @@
-import { decorationScrape } from "./scrapes/scrapes";
+import { masterRankMaterialScrape } from "./scrapes/scrapes";
 
-decorationScrape.forEach((scrape) => {
+masterRankMaterialScrape.forEach((scrape) => {
     console.log(scrape);
 });

@@ -39,3 +39,9 @@ export interface ExtractedDecoration {
     rarity: Number;
     skill: string;
 }
+
+export interface ExtractedMaterial {
+    name: string;
+    rarity: number | string;
+    type: string;
+}
