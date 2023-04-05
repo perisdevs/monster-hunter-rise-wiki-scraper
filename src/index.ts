@@ -8,11 +8,11 @@ writableArrays.forEach((wrtArr) => {
     fileManager.writeArray(wrtArr.path, wrtArr.array);
 });*/
 
-const testingObject: Object = {
+/*const testingObject: Object = {
     name: "Test Effect 2",
     description: "A testing effect that used to be JSON, but is now EdgeQL."
 }
 
-const result = JSONToEdgeQL(testingObject);
+const result = JSONToEdgeQL('StatusEffect', testingObject);
 
-fs.writeFileSync('./edgeql_output/test_query.edgeql', result);
+fs.writeFileSync('./edgeql_output/test_query.edgeql', result);*/

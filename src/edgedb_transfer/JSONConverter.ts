@@ -1,4 +1,4 @@
-export function JSONToEdgeQL(json: Object): string {
+export function JSONToEdgeQL(objectCategory: string, json: Object): string {
 
     const keyStrings: string[] = [];
             
@@ -8,7 +8,7 @@ export function JSONToEdgeQL(json: Object): string {
         keyStrings.push(newString);
     }
 
-    let edgeStatement = `insert StatusEffect {`;
+    let edgeStatement = `insert ${objectCategory} {`;
 
     keyStrings.forEach((keyString) => {
         edgeStatement = edgeStatement.concat(`\n\t${keyString}`);
